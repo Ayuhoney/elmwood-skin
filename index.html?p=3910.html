@@ -601,62 +601,81 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 }
 
 .curtain-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(18, 14, 10, 0.3) 0%, transparent 40%, rgba(18, 14, 10, 0.92) 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 12px;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(8, 6, 4, 0.55) 0%, rgba(12, 10, 8, 0.1) 30%, rgba(10, 8, 6, 0.85) 62%, rgba(6, 4, 3, 0.98) 100%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 14px 12px !important;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 5;
+  transition: opacity 0.35s ease !important;
+  z-index: 10 !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
 }
 
-.curtain-card-item:hover .curtain-card-overlay {
-  opacity: 1;
+.curtain-stage.curtain-spread-active .curtain-card-overlay {
+  opacity: 0.95 !important;
+}
+
+.curtain-card-item:hover .curtain-card-overlay,
+.curtain-card-item:focus-within .curtain-card-overlay {
+  opacity: 1 !important;
 }
 
 .curtain-card-vol {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-family: monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #1e1915;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(4px);
-  padding: 3px 8px;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  font-family: monospace !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  color: #120e0a !important;
+  background: #ffffff !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.45) !important;
+  z-index: 12 !important;
 }
 
 .curtain-card-badge {
-  align-self: flex-start;
-  font-size: 9px;
-  font-family: monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #f7d6a5;
-  background: rgba(18, 14, 10, 0.85);
-  padding: 3px 8px;
-  border-radius: 6px;
-  margin-top: 26px;
+  align-self: flex-start !important;
+  font-family: monospace !important;
+  font-size: 9.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: #ECC895 !important;
+  background: rgba(18, 14, 10, 0.92) !important;
+  border: 1px solid rgba(236, 200, 149, 0.45) !important;
+  padding: 3px 8px !important;
+  border-radius: 6px !important;
+  margin-top: 28px !important;
+  z-index: 12 !important;
 }
 
-.curtain-card-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1.35;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+.curtain-stage .curtain-card-overlay h4,
+.curtain-stage .curtain-card-title,
+.curtain-card-title,
+h4.curtain-card-title,
+.curtain-card-overlay h4,
+.curtain-card-overlay .curtain-card-title {
+  font-family: var(--e-global-typography-primary-font-family, 'Onest', sans-serif) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.01em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 1px rgba(0, 0, 0, 1) !important;
+  z-index: 12 !important;
 }
 
 .curtain-status-pill {
@@ -2903,7 +2922,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 01</span>
 									<span class="curtain-card-badge">Acne Care</span>
-									<h4 class="curtain-card-title">5 Effective Ways to Treat Acne</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">5 Effective Ways to Treat Acne</h4>
 								</div>
 							</div>
 						</div>
@@ -2915,7 +2934,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 02</span>
 									<span class="curtain-card-badge">Laser Care</span>
-									<h4 class="curtain-card-title">Laser Hair Removal: Benefits &amp; Expectation</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">Laser Hair Removal: Benefits &amp; Expectation</h4>
 								</div>
 							</div>
 						</div>
@@ -2927,7 +2946,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 03</span>
 									<span class="curtain-card-badge">Anti Aging</span>
-									<h4 class="curtain-card-title">Youthful &amp; Radiant Skin Therapy</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">Youthful &amp; Radiant Skin Therapy</h4>
 								</div>
 							</div>
 						</div>
@@ -2939,7 +2958,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 04</span>
 									<span class="curtain-card-badge">Daily Care</span>
-									<h4 class="curtain-card-title">The Science of Skin Barrier Care</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">The Science of Skin Barrier Care</h4>
 								</div>
 							</div>
 						</div>
@@ -2951,7 +2970,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 05</span>
 									<span class="curtain-card-badge">Pigment</span>
-									<h4 class="curtain-card-title">Targeting Hyperpigmentation</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">Targeting Hyperpigmentation</h4>
 								</div>
 							</div>
 						</div>
@@ -2963,7 +2982,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 06</span>
 									<span class="curtain-card-badge">PRP Therapy</span>
-									<h4 class="curtain-card-title">Advanced Cellular Rejuvenation</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">Advanced Cellular Rejuvenation</h4>
 								</div>
 							</div>
 						</div>
@@ -2975,7 +2994,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 07</span>
 									<span class="curtain-card-badge">Evidence</span>
-									<h4 class="curtain-card-title">Clinical Transformation Records</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">Clinical Transformation Records</h4>
 								</div>
 							</div>
 						</div>
@@ -2987,7 +3006,7 @@ body.header-scrolled .ekit-template-content-header {
 								<div class="curtain-card-overlay">
 									<span class="curtain-card-vol">VOL. 08</span>
 									<span class="curtain-card-badge">Editorial</span>
-									<h4 class="curtain-card-title">The Future of Medical Dermatology</h4>
+									<h4 class="curtain-card-title" style="color: #ffffff !important;">The Future of Medical Dermatology</h4>
 								</div>
 							</div>
 						</div>
@@ -3105,6 +3124,7 @@ body.header-scrolled .ekit-template-content-header {
 						var spread = p > 0.65;
 						if (spread !== isSpreadActive) {
 							isSpreadActive = spread;
+							stage.classList.toggle('curtain-spread-active', isSpreadActive);
 							if (statusDot) {
 								if (isSpreadActive) {
 									statusDot.classList.add('active');
