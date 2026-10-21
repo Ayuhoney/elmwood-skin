@@ -1,0 +1,16 @@
+body{
+	--e-global-color-primary					: #282A23;
+	--e-global-color-secondary					: #FFFFFF;
+	--e-global-color-text						: #7D7D75;
+	--e-global-color-accent						: #C69459;
+	--e-global-color-accentsecondary			: transparent;
+	--e-global-color-white						: #FFFFFF;
+	--e-global-color-black						: #000000;
+	--e-global-color-divider					: #282A231A;
+	--e-global-color-darkdivider				: #FFFFFF1A;
+	--e-global-color-background             	: #F8F2EB;
+	--e-global-typography-primary-font-family	: "Onest", sans-serif;
+	--e-global-typography-secondary-font-family	: "Onest", sans-serif;
+	--e-global-typography-text-font-family		: "Onest", sans-serif;
+	--e-global-typography-accent-font-family    : "Onest", sans-serif;
+}
