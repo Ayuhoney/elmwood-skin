@@ -1145,6 +1145,28 @@ body.header-scrolled .ekit-template-content-header {
 			<div id="loading-icon"><img src="wp-content/themes/dermix/assets/images/loader.svg" alt="Preloader"></div>
 		</div>
 	</div>
+	<script>
+		// Fail-safe preloader dismiss
+		(function() {
+			function dismissPreloader() {
+				var pl = document.querySelector('.theme-preloader');
+				if (pl && !pl.classList.contains('loaded')) {
+					pl.style.opacity = '0';
+					pl.style.transition = 'opacity 0.4s ease';
+					setTimeout(function() {
+						pl.classList.add('loaded');
+						pl.style.display = 'none';
+					}, 400);
+				}
+			}
+			if (document.readyState === 'complete') {
+				setTimeout(dismissPreloader, 600);
+			} else {
+				window.addEventListener('load', function() { setTimeout(dismissPreloader, 400); });
+				setTimeout(dismissPreloader, 1500);
+			}
+		})();
+	</script>
 		<div id="magic-cursor">
 		<div id="ball"></div>
 	</div>

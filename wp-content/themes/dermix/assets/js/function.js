@@ -787,12 +787,6 @@
 		$(".theme-preloader").fadeOut(500, function() {
 			$(this).addClass('loaded');
 		});
-	});
-	setTimeout(function(){
-		$(".theme-preloader").fadeOut(500, function() {
-			$(this).addClass('loaded');
-		});
-	}, 1200);
 
 		/* Image Reveal Animation */
 		if ($('.at-animation-image-style-1').length) {
