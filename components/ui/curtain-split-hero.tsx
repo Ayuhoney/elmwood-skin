@@ -131,14 +131,23 @@ function CurtainCard({
                     draggable={false}
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                {/* Book edge gradient & category badge */}
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-stone-950/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-2">
-                    <span className="self-start text-[9px] font-mono tracking-wider text-amber-300 font-semibold uppercase bg-stone-900/80 px-1.5 py-0.5 rounded">
-                        {item.category}
-                    </span>
-                    <p className="text-[10px] text-white font-medium leading-tight line-clamp-2">
+                {/* Monograph overlay with high-contrast text */}
+                <div
+                    className={`absolute inset-0 bg-gradient-to-b from-stone-950/60 via-stone-950/20 via-30% via-stone-950/85 via-65% to-stone-950/98 flex flex-col justify-between p-3 transition-opacity duration-300 pointer-events-none ${
+                        isSpreadActive ? "opacity-95" : "opacity-0 group-hover:opacity-100"
+                    }`}
+                >
+                    <div className="flex items-center justify-between gap-1">
+                        <span className="text-[9.5px] font-mono tracking-wider text-stone-950 font-extrabold uppercase bg-white px-1.5 py-0.5 rounded shadow-sm">
+                            {`VOL. 0${index + 1}`}
+                        </span>
+                        <span className="text-[9px] font-mono tracking-wider text-[#ECC895] font-bold uppercase bg-stone-950/90 border border-[#ECC895]/40 px-1.5 py-0.5 rounded">
+                            {item.category}
+                        </span>
+                    </div>
+                    <h4 className="text-[13px] text-white font-bold leading-snug line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                         {item.title}
-                    </p>
+                    </h4>
                 </div>
             </div>
         </motion.div>
