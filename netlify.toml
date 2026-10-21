@@ -1,0 +1,27 @@
+# Netlify Configuration for Elmwood Medical Centre
+
+[build]
+  # The directory to deploy. Static website with index.html at root.
+  publish = "."
+  # Build command (verifies TypeScript components without errors)
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Header rules for performance and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/wp-content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

@@ -56,10 +56,6 @@ const RING_R = 0.84; // ring radius tuned for stage
 const BOW = 1.82;
 const TITLE = 0.124; // ring label and front-card title
 const INDEX = 0.04; // the index down the right-hand side
-/** Items either side of the front still worth drawing. Past this a card is
-    edge-on, and further round it would stack up on the vanishing point. */
-const CULL = 1.6;
-
 /** How much of a wheel-notch or a dragged pixel counts as one item. */
 const WHEEL_UNITS = 900;
 const DRAG_UNITS = 420;

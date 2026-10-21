@@ -117,7 +117,7 @@ function CurtainCard({
                     : { scale: 0.98 }
             }
             whileTap={{ scale: 1.04, zIndex: 50 }}
-            onClick={(e) => {
+            onClick={(e: React.MouseEvent) => {
                 if (isSpreadActive) {
                     e.stopPropagation();
                     window.location.href = item.url;
@@ -168,7 +168,7 @@ export default function CurtainSplitHero() {
     const progress = useSpring(rawProgress, SPRING_CONFIG);
 
     const [isSpreadActive, setIsSpreadActive] = useState(false);
-    useMotionValueEvent(progress, "change", (p) => setIsSpreadActive(p > 0.65));
+    useMotionValueEvent(progress, "change", (p: number) => setIsSpreadActive(p > 0.65));
 
     const rawX = useMotionValue(0);
     const rawY = useMotionValue(0);
