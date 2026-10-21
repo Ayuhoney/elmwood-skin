@@ -5,8 +5,71 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* Theme Preloader with Elmwood Circular Emblem */
 .theme-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background-color: #0b120f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.theme-preloader.loaded,
+.theme-preloader[style*="display: none"] {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.theme-preloader .loading-container {
+  position: relative !important;
+  width: 120px !important;
+  height: 120px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+}
+
+.theme-preloader .loading-container .loading {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  border: 2.5px solid transparent !important;
+  border-top-color: #61CE5F !important;
+  border-bottom-color: #C69459 !important;
+  animation: rotate-loading 1.3s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+  box-shadow: 0 0 25px rgba(97, 206, 95, 0.25) !important;
+}
+
+.theme-preloader .loading-container #loading-icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 84px !important;
+  height: 84px !important;
+  max-width: 84px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.theme-preloader .loading-container #loading-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 /* Reset parent wrapper padding/margins so video is full-bleed */
